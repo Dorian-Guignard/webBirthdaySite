@@ -4,9 +4,9 @@
 
 This project has been entirely developed using the Symfony framework and some of its components, such as EasyAdmin. The FrontOffice section has been built with the Bulma CSS library and a portion coded in JavaScript. Additionally, dynamic image features have been implemented using the Lottie Web application.
 
-📖 Ce site web est un projet personnel permettant à une personne physique d'organiser son anniversaire : programmation, accès, mise en ligne des photos et questionnaire d'invités. Ceci via une interface fluide, facile et agréable afin que les invités puissent s'inscrire, suivre la programmation et l'avancement de l'événement, et transmettre des informations à la personne qui l'organise. L'administrateur a son propre back office (réalisé avec EasyAdmin) afin de récupérer les informations de ses invités et modifier ce qu'il souhaite sur le site.
+📖 Ce site web est un projet personnel permettant d'organiser la logistique  d'un evennement (type anniversaire) : programmation, accès, mise en ligne des photos et questionnaire d'invités. Ceci via une interface fluide, facile et agréable afin que les invités puissent s'inscrire, suivre la programmation et l'avancement de l'événement, et transmettre des informations à la personne qui l'organise. L'administrateur a son propre back office (réalisé avec EasyAdmin) afin de récupérer les informations de ses invités.
 
-Ce projet a été entièrement réalisé avec le framework Symfony et certains de ses composants comme EasyAdmin. La partie FrontOffice a été mise en place avec la bibliothèque CSS Bulma et une partie codée en JavaScript. Enfin, la partie des images dynamiques a été implémentée via l'application Web Lottie.
+Ce projet a été réalisé avec le framework Symfony. La partie front office a été mise en place avec la bibliothèque CSS Bulma. Les images dynamiques ont été implémenté via l'application Web Lottie.
 
 # [Symfony](https://symfony.com)
 
