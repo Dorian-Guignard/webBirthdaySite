@@ -1,0 +1,15 @@
+# config/packages/easy_admin.yaml
+
+
+# Indique à EasyAdmin d'utiliser le template list.html.twig pour l'affichage de la liste des entités dans l'interface d'administration.
+easy_admin:
+    design:
+        templates:
+            list: 'bundles/EasyAdminBundle/crud/list.html.twig'
+            
+    entities:
+        GuestQuestion:
+            class: App\Entity\GuestQuestion
+            list:
+                fields:
+                    - { property: 'user', type: 'text', formatValue: 'getSurname' }

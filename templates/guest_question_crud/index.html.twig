@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GuestQuestion index{% endblock %}
+
+{% block body %}
+    <h1>GuestQuestion index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pax</th>
+                <th>Night</th>
+                <th>Allergie</th>
+                <th>Regime</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for guest_question in guest_questions %}
+            <tr>
+                <td>{{ guest_question.id }}</td>
+                <td>{{ guest_question.pax }}</td>
+                <td>{{ guest_question.night }}</td>
+                <td>{{ guest_question.allergie }}</td>
+                <td>{{ guest_question.regime }}</td>
+                <td>
+                    <a href="{{ path('app_guest_question_crud_show', {'id': guest_question.id}) }}">show</a>
+                    <a href="{{ path('app_guest_question_crud_edit', {'id': guest_question.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_guest_question_crud_new') }}">Create new</a>
+{% endblock %}

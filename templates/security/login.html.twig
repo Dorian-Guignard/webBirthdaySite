@@ -1,0 +1,32 @@
+{# templates/login/index.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if error %}
+        <div class="notification is-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+<h1>Page de connexion</h1>
+    
+    <form action="{{ path('app_login') }}" method="post">
+        <div class="field">
+            <label class="label" for="username">Email:</label>
+            <div class="control">
+                <input class="input" type="text" id="username" name="_username" value="{{ last_username }}" />
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="password">Mot de passe:</label>
+            <div class="control">
+                <input class="input" type="password" id="password" name="_password" />
+            </div>
+        </div>
+
+        <div class="field">
+            <div class="control">
+                <button class="button is-success" type="submit">Connexion</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}

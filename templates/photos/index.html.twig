@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProgrameController!{% endblock %}
+
+{% block body %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<h1>Photographies</h1>
+  <br>
+    <br>
+
+<form action="{{ path('app_photos') }}" method="POST" enctype="multipart/form-data">
+  <div class="file has-name is-centered">
+    <label class="file-label">
+      <input class="file-input" type="file" name="file">
+      <span class="file-cta">
+        <span class="file-icon">
+          <i class="fas fa-upload"></i>
+        </span>
+        <span class="file-label">
+          Choisissez un fichier
+        </span>
+      </span>
+<span class="file-name" id="file-name" type="file" name="file">
+  Aucun fichier sélectionné
+</span>
+    </label>
+  </div>
+    <!-- Le bouton de soumission du formulaire -->
+     <div class="field columns is-centered">
+            <div class="control column is-narrow has-text-centered mt-5">
+             <a href="/chemin/vers/votre/image.jpg" download>
+                <button class="button is-success button is-centered is-large" type="submit">
+              Soumettre
+            </button>
+            </a>
+            </div>
+        </div>
+</form>
+<br>
+<br>
+
+<div class="columns is-multiline is-mobile">
+  {% for image in images %}
+    <div class="column is-6-mobile is-4-tablet is-3-desktop">
+      <figure class="image is-square">
+        <img class="img-border" src="{{ asset('/images/' ~ image) }}" alt="Uploaded Image">
+      </figure>
+    </div>
+  {% endfor %}
+</div>
+
+
+
+<script>
+  
+  $(document).ready(function() {
+  // Cible l'élément input[type=file]
+  var inputFile = $('input[type=file]');
+
+  // Écoute l'événement de changement du fichier
+  inputFile.on('change', function() {
+    // Récupére le nom du fichier sélectionné
+    var fileName = $(this).val().split('\\').pop();
+
+    // Mise à jour du texte du champ de la classe "file-name"
+    $('#file-name').text(fileName);
+  });
+});
+
+</script>
+
+
+{% endblock %}

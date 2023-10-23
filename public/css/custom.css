@@ -1,0 +1,359 @@
+html {
+  background: #ffafbd; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffc3a0,
+    #ffafbd
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffc3a0,
+    #ffafbd
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.custom-navbar {
+  background-color: transparent; /* Mettez la couleur d'arrière-plan que vous souhaitez utiliser */
+}
+
+/* Classe personnalisée pour rendre l'arrière-plan transparent en état hover */
+.navbar-item-transparent {
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+
+.navbar-item-transparent:hover {
+  background-color: transparent !important;
+}
+
+.img-border {
+  border-radius: 2%;
+  border-color: #7a7272;
+  border-style: unset;
+}
+
+.img-square {
+  width: 200px;
+  height: 200px;
+}
+
+body {
+  margin-left: 100px;
+  margin-right: 120px;
+}
+
+/* Style pour la barre de navigation */
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style pour les liens de navigation */
+ul.navbar li {
+  float: left;
+}
+
+ul.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.navbar li a:hover {
+  background-color: #111;
+}
+
+#sylvieWEImage-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#messageInvite-container p {
+  display: block;
+  margin-bottom: 10px; /* Ajoutez une marge en bas pour l'espace entre les paragraphes */
+  text-align: center;
+  font-family: "Cursive", cursive;
+  font-size: 23.5px; /* Augmentez la taille d'écriture */
+}
+
+#animationContainerLeft {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  width: 400px; /* Remplacez 300px par la largeur souhaitée */
+  height: 700px; /* Remplacez 200px par la hauteur souhaitée */
+}
+
+#animationContainerRight {
+  position: absolute;
+  right: 20px;
+  top: 30%;
+  width: 700px; /* Remplacez 300px par la largeur souhaitée */
+  height: 500px; /* Remplacez 200px par la hauteur souhaitée */
+}
+
+#animationContainerWIP {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -36%) scale(1);
+}
+
+#animationContainerWelcome {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.modal {
+  display: none; /* Masque la fenêtre modale par défaut */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4); /* Arrière-plan semi-transparent */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px; /* Ajoutez cette ligne pour incurver les bords */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive design pour les smartphones */
+@media only screen and (max-width: 600px) {
+  body {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  #animationContainerLeft,
+  #animationContainerRight,
+  #animationContainerWIP,
+  #animationContainerWelcome {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none;
+  }
+
+  #animationContainerRight {
+    display: none;
+  }
+}
+
+/* Responsive design pour les écrans de taille moyenne */
+@media only screen and (max-width: 1024px) {
+  body {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+  #animationContainerLeft {
+    left: 5%;
+    top: 17%;
+    width: 250px;
+    height: 450px;
+  }
+
+  #animationContainerRight {
+    right: 1%;
+    top: 28%;
+    width: 400px;
+    height: 300px;
+  }
+}
+
+#map {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+/* --bouton de formulaire*/
+button {
+  --width: 150px;
+  --timing: 2s;
+  border: 0;
+  width: var(--width);
+  padding-block: 1em;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 1em;
+  background: rgb(64, 192, 87);
+  transition: all 0.2s;
+  border-radius: 3px;
+}
+
+.centered-button a {
+  color: black;
+}
+
+button:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(250, 82, 82),
+    rgb(250, 82, 82) 16.65%,
+    rgb(190, 75, 219) 16.65%,
+    rgb(190, 75, 219) 33.3%,
+    rgb(76, 110, 245) 33.3%,
+    rgb(76, 110, 245) 49.95%,
+    rgb(64, 192, 87) 49.95%,
+    rgb(64, 192, 87) 66.6%,
+    rgb(250, 176, 5) 66.6%,
+    rgb(250, 176, 5) 83.25%,
+    rgb(253, 126, 20) 83.25%,
+    rgb(253, 126, 20) 100%,
+    rgb(250, 82, 82) 100%
+  );
+  animation: var(--timing) linear dance6123 infinite;
+  transform: scale(1.1) translateY(-1px);
+}
+
+@keyframes dance6123 {
+  to {
+    background-position: var(--width);
+  }
+}
+
+#messageInvite-container {
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Titre de la page pricipale*/
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #008080;
+  background: -webkit-linear-gradient(
+    to left,
+    #c7b8c5 25%,
+    #81279c 20%,
+    #caa7d4 100%
+  );
+  background: -moz-linear-gradient(
+    to left,
+    #c7b8c5 25%,
+    #81279c 20%,
+    #caa7d4 30%
+  );
+  background: linear-gradient(to left, #c7b8c5 30%, #cf86e5 55%, #af63c4 65%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.principal {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #008080;
+  background: -webkit-linear-gradient(
+    to left,
+    #fffb00 10%,
+    #ff9102 80%,
+    #e70c0c 100%
+  );
+  background: -moz-linear-gradient(
+    to left,
+    #fffb00 10%,
+    #ff9102 80%,
+    #e70c0c 100%
+  );
+  background: linear-gradient(to left, #e70c0c 10%, #dba800 80%, #cec004 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Styles pour la classe button-container */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Styles pour le bouton */
+.button-container button {
+  padding: 10px 20px;
+  background-color: #f0f0f08f;
+  border: none;
+  color: #333;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-container button:hover {
+  background-color: #ccc;
+}
+
+/* Styles pour le message d'erreur */
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+
+/* Styles pour le message de succès */
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  @media (max-width: 480px) {
+    .principal {
+      font-size: 27px;
+      text-align: center;
+    }
+  }
+}
+
+#matrix-code-rain {
+  display: none;
+}
+
+#matrix-code-rain.active {
+  display: block;
+}

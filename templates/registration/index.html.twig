@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello RegistrationController!{% endblock %}
+
+{% block body %}
+
+{% block content %}
+<h1>Inscription</h1>
+
+
+
+  
+{{ form_start(form, {'attr': {'class': 'form', 'id':'registration-form', 'novalidate': 'novalidate'}}) }}
+  <div class="field">
+    <label class="label">Mail</label>
+    <div class="control">
+      {{ form_widget(form.username, {'attr': {'class': 'input'}}) }}
+    </div>
+    {% if form.username.vars.errors|length > 0 %}
+      <p class="help is-danger">{{ form_errors(form.username) }}</p>
+    {% endif %}
+  </div>
+
+  <div class="field">
+    <label class="label">Prénom</label>
+    <div class="control">
+      {{ form_widget(form.surname, {'attr': {'class': 'input'}}) }}
+    </div>
+    {% if form.surname.vars.errors|length > 0 %}
+      <p class="help is-danger">{{ form_errors(form.surname) }}</p>
+    {% endif %}
+  </div>
+
+  <div class="field">
+    <label class="label">Nom</label>
+    <div class="control">
+      {{ form_widget(form.name, {'attr': {'class': 'input'}}) }}
+    </div>
+    {% if form.name.vars.errors|length > 0 %}
+      <p class="help is-danger">{{ form_errors(form.name) }}</p>
+    {% endif %}
+  </div>
+  
+ <label class="label">Mot de Passe</label>
+
+     
+      {{ form_widget(form.password) }}
+    
+    {% if form.password.vars.errors|length > 0 %}
+      <p class="help is-danger">{{ form_errors(form.password) }}</p>
+    {% endif %}
+  </div>
+<br>
+  {{ form_widget(form.submit, {'attr': {'class': 'button is-primary'}}) }}
+{{ form_end(form) }}
+
+{% if form.vars.errors|length > 0 %}
+    <div class="notification is-danger">
+        <p>Il y a des erreurs dans le formulaire :</p>
+        <ul>
+            {% for formError in form.vars.errors %}
+                {% if formError.plainMessage is defined %}
+                    <li>{{ formError.plainMessage }}</li>
+                {% else %}
+                    {% for error in formError %}
+                        <li>{{ error.message }}</li>
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+
+
+<div id="error-container"></div>
+
+
+<script>
+    // Déplace les messages d'erreur dans l'encart d'erreurs séparé
+    var errorContainer = document.querySelector('.notification.is-danger');
+    var errorList = errorContainer.querySelector('ul');
+    var errorFields = document.querySelectorAll('.error');
+
+    errorFields.forEach(function(field) {
+        var fieldErrors = field.parentElement.querySelectorAll('.help.is-danger');
+        fieldErrors.forEach(function(error) {
+            errorList.appendChild(document.createElement('li')).textContent = error.textContent;
+        });
+    });
+
+    // Supprime les messages d'erreur des champs individuels
+    errorFields.forEach(function(field) {
+        field.parentElement.querySelectorAll('.help.is-danger').forEach(function(error) {
+            error.remove();
+        });
+    });
+</script>
+
+
+{% endblock %}
+
+{% endblock %}

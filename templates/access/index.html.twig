@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProgrameController!{% endblock %}
+
+{% block body %}
+<br>
+    <br>
+        <br>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <div class="container">
+        <div class="columns">
+            <div class="column is-6">
+                <h1 class="title">Moyen d'accès</h1>
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor est quis sollicitudin volutpat. Donec at luctus eros. Curabitur dictum leo nec massa tristique, eu tempor ligula commodo. Vestibulum sit amet sem nec nisl hendrerit finibus. Nunc dapibus ullamcorper lacus sed finibus. Morbi faucibus metus vel risus malesuada, nec aliquam nisi feugiat. Vivamus tincidunt massa ut dolor aliquet, at eleifend libero iaculis. Cras eu ipsum felis. Sed eget arcu tortor. Nam sed nunc dapibus, auctor erat eu, tincidunt est. Duis in diam ligula. Nunc hendrerit, dui ut venenatis tincidunt, tellus nulla ultrices lorem, eu consectetur dui erat eget lectus. Maecenas volutpat ligula vel ultricies interdum.
+
+Integer ut ante in metus hendrerit finibus. Suspendisse ut purus commodo, tempor ipsum non, varius purus. Morbi eu enim ligula. Mauris consectetur, odio ac varius dictum, eros risus pulvinar erat, a facilisis risus elit sed diam. Nunc sollicitudin feugiat lacus ac venenatis. Proin bibendum viverra libero, non sollicitudin dolor aliquet et. Vestibulum pellentesque justo risus, auctor dapibus est mattis vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed vestibulum dignissim leo, in tempor mauris sagittis vel. Aliquam sed fringilla ex, non consectetur elit. In quis ultricies enim. Mauris varius tempor nulla. Nulla facilisi. Cras aliquam arcu id est suscipit semper.</p>
+
+
+            </div>
+         <div class="column is-6 "> <!-- Ajout des classes "is-6" et "has-text-right" pour le bloc de droite -->
+            <h1 class="title">Plan</h1>
+            <div id="map" style="width: 100%; height: 400px;"></div>
+
+
+                <script>
+                // Initialise la carte
+                var map = L.map('map').setView([48.8482641, 2.4360408], 13);
+
+                 // Ajoute une couche de tuiles OpenStreetMap
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                  attribution: '© OpenStreetMap contributors'
+                   }).addTo(map);
+
+                 // Ajoute un marqueur à une position spécifique
+                 L.marker([48.8482641, 2.4360408]).addTo(map);
+                </script>
+
+            </div>
+        </div>
+    </div>
+
+
+   
+{% endblock %}
+
+

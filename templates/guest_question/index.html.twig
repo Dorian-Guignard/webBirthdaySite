@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GuestQuestionController!{% endblock %}
+
+{% block body %}
+
+<p class="title">Questionnaire d'invitation</p>
+
+<form method="post">
+{{ form_row(form._token) }}
+    <div class="field">
+        <label class="label">Nombre de personnes &#x1F468;&#x200D;&#x1F469;&#x200D;</label>
+        <div class="control">
+            {{ form_widget(form.pax, {'attr': {'class': 'input'}}) }}
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Disponibilité &#xf236;</label>
+        <div class="control">
+            {{ form_widget(form.night, {'attr': {'class': 'input'}}) }}
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Allergie &#x1F927;</label>
+        <div class="control">
+            {{ form_widget(form.allergie, {'attr': {'class': 'input'}}) }}
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Régime Alimentaire &#x1F374;</label>
+        <div class="control">
+            {{ form_widget(form.regime, {'attr': {'class': 'input'}}) }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="control">
+            <button type="submit" class="button is-primary">Envoyer</button>
+        </div>
+    </div>
+    
+</form>
+{% endblock %}

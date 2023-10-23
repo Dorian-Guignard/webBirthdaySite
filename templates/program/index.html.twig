@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProgrameController!{% endblock %}
+
+{% block body %}
+
+ <div id="animationContainerWIP"></div>
+  <script>
+    var animationLeft = bodymovin.loadAnimation({
+      container: document.getElementById('animationContainerWIP'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets10.lottiefiles.com/packages/lf20_riAqnQrYxZ.json'
+    });
+  </script>
+
+{% endblock %}

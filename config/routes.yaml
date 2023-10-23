@@ -1,0 +1,48 @@
+index:
+  path: /
+  controller: App\Controller\UserController::index
+
+app_register:
+  path: /register
+  controller: App\Controller\RegistrationController::register
+
+app_program:
+  path: /program
+  controller: App\Controller\ProgramController::program
+
+app_access:
+  path: /access
+  controller: App\Controller\AccessController::access
+
+app_photos:
+  path: /photos
+  controller: App\Controller\PhotosController::photos
+
+app_registration_success:
+  path: /registration/success
+  controller: App\Controller\RegistrationController::success
+  methods: POST
+
+app_login:
+    path: /login
+    controller: App\Controller\SecurityController::login
+
+# Login LexikJWT
+# @see https://github.com/lexik/LexikJWTAuthenticationBundle/blob/2.x/Resources/doc/index.rst#configure-application-routing
+
+login_check:
+  path: /login_check
+
+app_logout:
+  path: /logout
+  methods: GET
+
+admin_dashboard:
+    path: /admin
+    controller: EasyCorp\Bundle\EasyAdminBundle\Controller\AdminController::indexAction
+    methods: ['GET']
+
+# config/routes.yaml
+easy_admin_bundle:
+    resource: '@EasyAdminBundle/Controller/EasyAdminController.php'
+    type: annotation

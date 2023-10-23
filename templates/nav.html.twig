@@ -1,0 +1,104 @@
+<!-- navbar.html.twig -->
+<script type="module" src="{{ asset('/js/MatrixCodeRainComponent.js') }}"></script>
+
+
+{% if isAuthenticated %}
+
+<nav class="navbar custom-navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ path('app_user') }}">
+    <div>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <lord-icon
+    src="https://cdn.lordicon.com/dkobsluq.json"
+    trigger="hover"
+    colors="outline:#121331,primary:#ffc738,secondary:#f28ba8,tertiary:#f9c9c0,quaternary:#ebe6ef"
+    style="width:50px;height:50px">
+    </lord-icon>
+    </div> 
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item navbar-item-transparent" href="{{ path('app_program') }}">
+        Programme
+      </a>
+
+      <a class="navbar-item navbar-item-transparent" href="{{ path('app_access') }}">
+        Moyen d'acces
+      </a>
+
+
+
+{% if isAuthenticated %}
+  <a class="navbar-item navbar-item-transparent" onClick="toggleMatrixCodeRain()" href="{{ path('app_surpise') }}"> 
+    Surprise
+  </a>
+  <div id="matrix-code-rain-container"></div>
+{% endif %}
+
+<script>
+  function toggleMatrixCodeRain() {
+    const matrixCodeRainContainer = document.getElementById("matrix-code-rain-container");
+
+    // Si le composant n'est pas déjà présent, ajoutez-le
+    if (!matrixCodeRainContainer.querySelector("#matrix-code-rain")) {
+      const matrixCodeRain = document.createElement("div");
+      matrixCodeRain.id = "matrix-code-rain";
+      matrixCodeRain.classList.add("active"); // Assurez-vous d'ajouter la classe "active" pour que la pluie de code apparaisse initialement
+      matrixCodeRainContainer.appendChild(matrixCodeRain);
+
+      // Maintenant, créez l'instance de MatrixCodeRainComponent dans cette div
+      ReactDOM.render(<MatrixCodeRainComponent />, matrixCodeRain);
+    } else {
+      // Si le composant est déjà présent, retirez-le
+      ReactDOM.unmountComponentAtNode(matrixCodeRainContainer);
+    }
+  }
+</script>
+
+      <div class="navbar-end">
+        <a class="navbar-item navbar-item-transparent" href="{{ path('app_photos') }}">
+        Photos
+        </a>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+       
+
+
+    {# L'utilisateur est connecté, masquer les boutons #}          
+          <a class="button is-light" href="{{ path('app_logout') }}">
+            Se Déconnecter
+          </a>
+{% else %}
+
+            <hr>
+            <div class="navbar-end">      
+    <a class="button is-primary" href="{{ path('app_register') }}">
+          <strong>Inscription</strong>
+          </a>
+          <a class="button is-light" href="{{ path('app_login') }}">
+            Se connecter
+          </a>
+          </div>
+          
+            <hr>
+{% endif %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+

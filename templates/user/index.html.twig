@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UserController!{% endblock %}
+
+
+{% block body %}
+    <h1 class="principal">
+          Invitation à l'anniversaire de Sylvie
+    </h1>
+
+
+<br>
+
+<div id="messageInvite-container">
+
+<p>Bienvenue dans ce lieu enchanté,
+<br>Où l'anniversaire de Sylvie sera célébré.
+<br>Cinquante printemps de bonheur et de douceur,
+<br>Nous unissons nos voix pour l'honorer en chœur.</p>
+<br>
+<p>Un souffle de félicité dans l'air,
+<br>Une invitation unique à partager.
+<br>Soyez présents, amis et proches,
+<br>Pour que ce jour soit une symphonie sans reproche.</p>
+<br>
+<p> Un instant précieux, une ode à la vie,
+<br>Rejoignez-nous pour fêter cette belle Sylvie.
+<br>Un anniversaire où l'amour se déploie,
+<br>Sylvie, célébrons ensemble ta joie.</p>
+  
+
+
+<div class="button-container">
+  {% if hasUserData %}
+    <!-- L'utilisateur a des données, masquer le bouton -->
+    <button class="centered-button" id="clic-moi-button" style="display: none;">
+      <a href="{{ path('app_guest_question') }}">
+        Clic moi
+      </a>
+    </button>
+  {% else %}
+    <!-- L'utilisateur n'a pas de données, afficher le bouton -->
+    <button class="centered-button" id="clic-moi-button">
+      <a href="{{ path('app_guest_question') }}">
+        Clic moi
+      </a>
+    </button>
+  {% endif %}
+</div>
+
+
+</div>
+
+
+ <div id="animationContainerLeft"></div>
+
+<br>
+  <script>
+    var animationLeft = bodymovin.loadAnimation({
+      container: document.getElementById('animationContainerLeft'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets3.lottiefiles.com/packages/lf20_QwDxzGI8Oo.json'
+    });
+  </script>
+
+  <div id="animationContainerRight"></div>
+  <script>
+    var animationRight = bodymovin.loadAnimation({
+      container: document.getElementById('animationContainerRight'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets4.lottiefiles.com/packages/lf20_EFnlfcxgVu.json'
+    });
+  </script>
+
+
+
+
+{% endblock %}
