@@ -13,6 +13,7 @@
                 <th>Night</th>
                 <th>Allergie</th>
                 <th>Regime</th>
+                <th>Playlist</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -24,6 +25,7 @@
                 <td>{{ guest_question.night }}</td>
                 <td>{{ guest_question.allergie }}</td>
                 <td>{{ guest_question.regime }}</td>
+                <td>{{ guest_question.playlist }}</td>
                 <td>
                     <a href="{{ path('app_guest_question_crud_show', {'id': guest_question.id}) }}">show</a>
                     <a href="{{ path('app_guest_question_crud_edit', {'id': guest_question.id}) }}">edit</a>

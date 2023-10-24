@@ -38,6 +38,11 @@ class GuestQuestion
     private $regime;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $playlist;
+
+    /**
      * @ORM\OneToOne(targetEntity=User::class, inversedBy="guestQuestion", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -104,6 +109,26 @@ class GuestQuestion
     public function setUser(User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of playlist
+     */ 
+    public function getPlaylist()
+    {
+        return $this->playlist;
+    }
+
+    /**
+     * Set the value of playlist
+     *
+     * @return  self
+     */ 
+    public function setPlaylist($playlist)
+    {
+        $this->playlist = $playlist;
 
         return $this;
     }

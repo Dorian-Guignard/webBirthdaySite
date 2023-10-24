@@ -357,3 +357,27 @@ h1 {
 #matrix-code-rain.active {
   display: block;
 }
+
+
+.video-border{
+border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
+    border-radius: 8px; /* Rayon des coins arrondis */
+    padding: 10px; /* Espace à l'intérieur de la bordure */
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+/* Cachez le menu hamburger en mode desktop */
+.navbar-burger {
+  display: none;
+}
+
+/* Affichez le menu hamburger en mode smartphone */
+@media screen and (max-width: 768px) {
+  .navbar-burger {
+    display: block;
+  }
+  /* Ajoutez d'autres styles pour le menu déroulant ici */
+}

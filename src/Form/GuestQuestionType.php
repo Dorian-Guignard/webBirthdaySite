@@ -16,6 +16,7 @@ class GuestQuestionType extends AbstractType
             ->add('night')
             ->add('allergie')
             ->add('regime')
+            ->add('playlist')
             
         ;
     }

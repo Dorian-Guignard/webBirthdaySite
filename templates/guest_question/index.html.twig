@@ -3,7 +3,7 @@
 {% block title %}Hello GuestQuestionController!{% endblock %}
 
 {% block body %}
-
+<br>
 <p class="title">Questionnaire d'invitation</p>
 
 <form method="post">
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="field">
-        <label class="label">Disponibilité &#xf236;</label>
+        <label class="label">Disponibilité &#x1F31C;</label>
         <div class="control">
             {{ form_widget(form.night, {'attr': {'class': 'input'}}) }}
         </div>
@@ -31,12 +31,20 @@
         <div class="control">
             {{ form_widget(form.regime, {'attr': {'class': 'input'}}) }}
         </div>
+    </div>   
+     <div class="field">
+        <label class="label">Vos musiques pour le DJ &#x1F39C;</label>
+        <div class="control">
+            {{ form_widget(form.playlist, {'attr': {'class': 'input'}}) }}
+        </div>
     </div>
+    <br>
     <div class="field">
         <div class="control">
             <button type="submit" class="button is-primary">Envoyer</button>
         </div>
     </div>
+
     
 </form>
 {% endblock %}

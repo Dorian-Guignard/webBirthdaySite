@@ -32,7 +32,7 @@
       </a>
 
       <a class="navbar-item navbar-item-transparent" href="{{ path('app_access') }}">
-        Moyen d'acces
+        Le lieu
       </a>
 
 
@@ -44,29 +44,9 @@
   <div id="matrix-code-rain-container"></div>
 {% endif %}
 
-<script>
-  function toggleMatrixCodeRain() {
-    const matrixCodeRainContainer = document.getElementById("matrix-code-rain-container");
-
-    // Si le composant n'est pas déjà présent, ajoutez-le
-    if (!matrixCodeRainContainer.querySelector("#matrix-code-rain")) {
-      const matrixCodeRain = document.createElement("div");
-      matrixCodeRain.id = "matrix-code-rain";
-      matrixCodeRain.classList.add("active"); // Assurez-vous d'ajouter la classe "active" pour que la pluie de code apparaisse initialement
-      matrixCodeRainContainer.appendChild(matrixCodeRain);
-
-      // Maintenant, créez l'instance de MatrixCodeRainComponent dans cette div
-      ReactDOM.render(<MatrixCodeRainComponent />, matrixCodeRain);
-    } else {
-      // Si le composant est déjà présent, retirez-le
-      ReactDOM.unmountComponentAtNode(matrixCodeRainContainer);
-    }
-  }
-</script>
-
       <div class="navbar-end">
         <a class="navbar-item navbar-item-transparent" href="{{ path('app_photos') }}">
-        Photos
+        Photos de vous
         </a>
       </div>
     </div>
@@ -75,11 +55,9 @@
       <div class="navbar-item">
         <div class="buttons">
        
-
-
     {# L'utilisateur est connecté, masquer les boutons #}          
           <a class="button is-light" href="{{ path('app_logout') }}">
-            Se Déconnecter
+            Déconnexion
           </a>
 {% else %}
 
