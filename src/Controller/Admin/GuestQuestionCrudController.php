@@ -51,5 +51,6 @@ class GuestQuestionCrudController extends AbstractCrudController
         yield IntegerField::new('night');
         yield TextareaField::new('allergie');
         yield TextareaField::new('regime');
+        yield TextareaField::new('playlist');
     }
 }
