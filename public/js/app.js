@@ -14,3 +14,4 @@ document.addEventListener('DOMContentLoaded', function () {
     menu.classList.toggle('is-active');
   });
 });
+

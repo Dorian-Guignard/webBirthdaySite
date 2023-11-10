@@ -51,13 +51,21 @@
   </a>
   <div id="matrix-code-rain-container"></div>
 {% endif %}
-
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-       
+        
+      
+  
+    <!-- L'utilisateur n'a pas de données, afficher le bouton -->
+    <button class="button is-light" id="clic-moi-button">
+      <a href="{{ path('app_guest_question') }}">
+        Mon Formulaire
+      </a>
+    </button>
+
     {# L'utilisateur est connecté, masquer les boutons #}          
           <a class="button is-light" href="{{ path('app_logout') }}">
             Déconnexion

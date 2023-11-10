@@ -35,26 +35,6 @@
 <br>Sylvie, célébrons ensemble ta joie.</p>
   
 
-
-<div class="button-container">
-  {% if hasUserData %}
-    <!-- L'utilisateur a des données, masquer le bouton -->
-    <button class="centered-button" id="clic-moi-button" style="display: none;">
-      <a href="{{ path('app_guest_question') }}">
-        Clic moi
-      </a>
-    </button>
-  {% else %}
-    <!-- L'utilisateur n'a pas de données, afficher le bouton -->
-    <button class="centered-button" id="clic-moi-button">
-      <a href="{{ path('app_guest_question') }}">
-        Clic moi
-      </a>
-    </button>
-  {% endif %}
-</div>
-
-
 </div>
 
 

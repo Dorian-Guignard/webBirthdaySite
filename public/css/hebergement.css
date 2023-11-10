@@ -1,0 +1,44 @@
+/* Styles pour le conteneur des éléments */
+.container-hebergement {
+    width: 70%; /* Ajustez la largeur selon vos besoins */
+    position: absolute;
+   
+}
+
+.carousel{
+    position: relative;
+    left: 400px;
+    
+}
+
+/* Styles pour le conteneur défilant */
+.scrolling-container {
+    white-space: nowrap; /* Empêche le retour à la ligne des éléments */
+    font-size: 0; /* Supprime l'espace entre les éléments */
+}
+
+/* Styles pour chaque élément */
+.item {
+    display: inline-block;
+    margin-right: 20px; /* Espace entre les éléments (ajustez selon vos besoins) */
+    
+}
+
+.img-hebergement {
+    width: 60%; /* Largeur de chaque image */
+    height: 60%; /* Hauteur de chaque image */
+    object-fit: cover; /* Redimensionner l'image tout en conservant les proportions */
+    /* Autres styles d'image, si nécessaire */
+    border-radius: 10px;
+}
+
+.slick-next {
+    right: auto; /* Aligne la flèche à droite */
+    left: 61%; /* Supprime la position à gauche */
+}
+
+#memoHebergement{
+    color: aliceblue;
+    text-align: center;
+    size: 15px;
+}
