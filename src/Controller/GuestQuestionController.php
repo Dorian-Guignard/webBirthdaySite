@@ -24,12 +24,7 @@ class GuestQuestionController extends AbstractController
      */
     public function index(FormValidationService $formValidationService, Security $security, Request $request, AuthenticationService $authenticationService, EntityManagerInterface $entityManager, UserDataCheckService $userDataCheckService): Response
     {
-
-        // Empèche un utilisateur de se connecter au formulaire si des données du formulaire sont présentes en BDD
-        if ($userDataCheckService->hasUserData()) {
-
-            return $this->redirectToRoute('app_user');
-        }
+       
 
         //Utilise le service AuthenticationService pour verifier si un utilisateur est connecté
         $isAuthenticated = $authenticationService->isAuthenticated();
@@ -39,6 +34,10 @@ class GuestQuestionController extends AbstractController
 
         // Cette ligne récupère l'utilisateur connecté à partir du service Security et le stocke dans la variable $user
         $user = $security->getUser();
+
+        $userData = $user->getGuestQuestion();
+
+dump($userData);
 
         //Ceci récupére l'identifiant de l'utilisateur connecté
         $userConnected = $user->getUserIdentifier();
