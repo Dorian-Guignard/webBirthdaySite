@@ -35,7 +35,15 @@
         Le lieu
       </a>
 
+      <a class="navbar-item navbar-item-transparent" href="{{ path('app_hebergement') }}">
+        Hébergement
+      </a>
 
+      <div class="navbar-end">
+        <a class="navbar-item navbar-item-transparent" href="{{ path('app_photos') }}">
+        Trombinoscope
+        </a>
+      </div>
 
 {% if isAuthenticated %}
   <a class="navbar-item navbar-item-transparent" onClick="toggleMatrixCodeRain()" href="{{ path('app_surpise') }}"> 
@@ -44,11 +52,6 @@
   <div id="matrix-code-rain-container"></div>
 {% endif %}
 
-      <div class="navbar-end">
-        <a class="navbar-item navbar-item-transparent" href="{{ path('app_photos') }}">
-        Photos de vous
-        </a>
-      </div>
     </div>
 
     <div class="navbar-end">

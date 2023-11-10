@@ -1,0 +1,47 @@
+.text-param{  
+  text-align: center;
+  color:#ffffff;
+font-weight: bold;
+
+}
+
+h2{
+      text-align: center;
+  color:#ffffff;
+font-weight: bold;
+}
+
+/* Styles pour le conteneur des éléments */
+.img-programm-container {
+    display: flex;
+    grid-template-columns: 50% 50%;
+    grid-gap: 15px; /* Espace entre les éléments */
+}
+
+/* Styles pour chaque élément */
+.img-programm-item {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.img-programm {
+    margin-top: 10px;
+    width: 500px; /* Occupe toute la largeur de la colonne */
+    max-width: 100%; /* Pour s'adapter à la taille de l'image */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Autres styles d'image, si nécessaire */
+}
+
+/* Ajouter une ombre au survol */
+.img-programm-item:hover {
+    transform: scale(1.2); /* Optionnel : légère mise à l'échelle de l'élément au survol */
+}
+
+.img-programm:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Ombre au survol */
+}

@@ -1,0 +1,13 @@
+.group-bandeau{
+    display: flex;
+}
+
+.bandeau-photo{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 250px;
+    height: 150px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}

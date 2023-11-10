@@ -3,12 +3,12 @@ html {
   background: -webkit-linear-gradient(
     to right,
     #ffc3a0,
-    #ffafbd
+    #dd566c
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
-    to right,
-    #ffc3a0,
-    #ffafbd
+    to left,
+    #2c23af,
+    #a929ff
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -20,6 +20,7 @@ html {
 .navbar-item-transparent {
   background-color: transparent;
   transition: background-color 0.3s;
+  color: #ffffff;
 }
 
 .navbar-item-transparent:hover {
@@ -48,12 +49,13 @@ ul.navbar {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #4fe8fc;
 }
 
 /* Style pour les liens de navigation */
 ul.navbar li {
   float: left;
+  
 }
 
 ul.navbar li a {
@@ -194,8 +196,13 @@ ul.navbar li a:hover {
 }
 
 #map {
-  border: 1px solid black;
+ 
   border-radius: 5px;
+  border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
+  border-radius: 8px; /* Rayon des coins arrondis */
+  padding: -10px; /* Espace à l'intérieur de la bordure */
+  border: -10px;
+
 }
 
 /* --bouton de formulaire*/
@@ -246,6 +253,7 @@ button:hover {
 
 #messageInvite-container {
   text-align: center;
+  color:#ffffff;
 }
 
 .button-container {
@@ -367,6 +375,7 @@ border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
 
 .bold-text {
     font-weight: bold;
+    color: #ffffff;
 }
 
 /* Cachez le menu hamburger en mode desktop */
