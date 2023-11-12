@@ -12,13 +12,14 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\SluggerInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Services\UserDataCheckService;
 
 class PhotosController extends AbstractController
 {
     /**
      * @Route("/photos", name="app_photos")
      */
-    public function photos(Request $request, EntityManagerInterface $entityManager, AuthenticationService $authenticationService, SluggerInterface $slugger): Response
+    public function photos(UserDataCheckService $hasUserData, Request $request, EntityManagerInterface $entityManager, AuthenticationService $authenticationService, SluggerInterface $slugger): Response
     {
         $isAuthenticated = $authenticationService->isAuthenticated();
 
@@ -71,6 +72,7 @@ class PhotosController extends AbstractController
             'images' => $images,
             'controller_name' => 'PhotosController',
             'isAuthenticated' => $isAuthenticated,
+            'hasUserData' => $hasUserData,
             'successMessage' => 'Le fichier a été téléchargé avec succès.',
         ]);
     }

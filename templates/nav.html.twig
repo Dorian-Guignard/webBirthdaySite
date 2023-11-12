@@ -47,7 +47,7 @@
 
 {% if isAuthenticated %}
   <a class="navbar-item navbar-item-transparent" onClick="toggleMatrixCodeRain()" href="{{ path('app_surpise') }}"> 
-    Surprise
+    Enter into Matrix
   </a>
   <div id="matrix-code-rain-container"></div>
 {% endif %}
@@ -59,13 +59,23 @@
         
       
   
-    <!-- L'utilisateur n'a pas de données, afficher le bouton -->
-    <button class="button is-light" id="clic-moi-button">
-      <a href="{{ path('app_guest_question') }}">
-        Mon Formulaire
+
+{% if hasUserData %}
+    <!-- L'utilisateur a des données, afficher le bouton -->
+    <button class="button is-light" id="clic-moi-button1">
+      <a href="{{ path('app_guest_question_edit') }}">
+        Mon Profil
       </a>
     </button>
 
+{% else %}
+    <!-- L'utilisateur n'a pas de données, afficher le bouton -->
+    <button class="button clic-moi-button is-light custom-text-color" id="clic-moi-button">
+      <a href="{{ path('app_guest_question') }}">
+        <img src="/img/attention.png">  Formulaire
+      </a>
+    </button>
+  {% endif %}
     {# L'utilisateur est connecté, masquer les boutons #}          
           <a class="button is-light" href="{{ path('app_logout') }}">
             Déconnexion

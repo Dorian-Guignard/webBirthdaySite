@@ -4,7 +4,7 @@
 
 {% block body %}
 <br>
-<p class="title">Questionnaire d'invitation</p>
+<p class="title">Modification du questionnaire d'invitation</p>
 
 <form method="post">
 {{ form_row(form._token) }}
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div class="field">
-        <label class="label">Nombre de places eventuellement disponibile dans ma voiture </label>
+        <label class="label">Nombre de places eventuellement disponibile dans ma voiture</label>
         <div class="control">
             {{ form_widget(form.night, {'attr': {'class': 'input'}}) }}
         </div>
@@ -41,7 +41,7 @@
     <br>
     <div class="field">
         <div class="control">
-            <button type="submit" class="button is-primary">Envoyer</button>
+            <button type="submit" class="button is-primary">Enregistrer les modification</button>
         </div>
     </div>
 

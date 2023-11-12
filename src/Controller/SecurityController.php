@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use App\Services\UserDataCheckService;
 
 
 class SecurityController extends AbstractController
@@ -15,7 +16,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="app_login", methods={"GET", "POST"})
      */
-    public function login(AuthenticationService $authenticationService, AuthenticationUtils $authenticationUtils): Response
+    public function login(UserDataCheckService $hasUserData, AuthenticationService $authenticationService, AuthenticationUtils $authenticationUtils): Response
     {
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -29,7 +30,10 @@ class SecurityController extends AbstractController
         return $this->render('security/login.html.twig', [
             'last_username' => $lastUsername,
             'error'         => $error,
-            'isAuthenticated' => $isAuthenticated,
+            'isAuthenticated' => $isAuthenticated, 
+            'hasUserData' => $hasUserData
+    
+    
             
         ]);
 

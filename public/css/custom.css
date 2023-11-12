@@ -251,6 +251,10 @@ button:hover {
   }
 }
 
+.custom-text-color {
+  color: #e70c0c; /* Couleur rouge */
+}
+
 #messageInvite-container {
   text-align: center;
   color:#ffffff;

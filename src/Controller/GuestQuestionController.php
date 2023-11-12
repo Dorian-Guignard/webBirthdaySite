@@ -22,7 +22,12 @@ class GuestQuestionController extends AbstractController
      * @Route("/guest/question", name="app_guest_question")
      * 
      */
-    public function index(FormValidationService $formValidationService, Security $security, Request $request, AuthenticationService $authenticationService, EntityManagerInterface $entityManager, UserDataCheckService $userDataCheckService): Response
+    public function index(FormValidationService $formValidationService,
+     Security $security,
+    Request $request, 
+    AuthenticationService $authenticationService, 
+    EntityManagerInterface $entityManager, 
+    UserDataCheckService $userDataCheckService): Response
     {
        
 
@@ -34,10 +39,6 @@ class GuestQuestionController extends AbstractController
 
         // Cette ligne récupère l'utilisateur connecté à partir du service Security et le stocke dans la variable $user
         $user = $security->getUser();
-
-        $userData = $user->getGuestQuestion();
-
-dump($userData);
 
         //Ceci récupére l'identifiant de l'utilisateur connecté
         $userConnected = $user->getUserIdentifier();
@@ -75,9 +76,53 @@ dump($userData);
         return $this->render('guest_question/index.html.twig', [
             'controller_name' => 'GuestQuestionController',
             'username' => $userConnected,
-            'isAuthenticated' => $isAuthenticated,
+            'isAuthenticated' => $isAuthenticated, 
+            'hasUserData' => $userDataCheckService,
             'form' => $form->createView()
 
         ]);
     }
+
+
+    /**
+     * @Route("/guest/question/edit", name="app_guest_question_edit")
+     */
+    public function edit(AuthenticationService $isAuthenticated, UserDataCheckService $userDataCheckService, FormValidationService $formValidationService, Security $security, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $userHasData = $userDataCheckService->hasUserData();
+        if($userHasData === false){
+            return $this->redirectToRoute('app_guest_question');
+
+        }
+        // Récupérez l'utilisateur connecté
+        $user = $security->getUser();
+
+        // Vérifiez si l'utilisateur a déjà des données d'invité
+        $guestQuestion = $user->getGuestQuestion();
+
+        // Créez un formulaire pour la modification
+        $form = $this->createForm(GuestQuestionType::class, $guestQuestion);
+
+        // Traitez la requête
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // Persistez les données du formulaire
+            $entityManager->persist($guestQuestion);
+            $entityManager->flush();
+
+            // Redirigez l'utilisateur vers une autre page après la soumission
+            return $this->redirectToRoute('app_user');
+        }
+
+        return $this->render('guest_question_edit/guest_question_edit.html.twig', [
+            'controller_name' => 'GuestQuestionController',
+            'isAuthenticated' => $isAuthenticated,
+            'hasUserData' => $userDataCheckService->hasUserData(),
+            'form' => $form->createView(),
+            
+            
+        ]);
+    }
+
 }

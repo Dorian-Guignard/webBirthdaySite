@@ -17,31 +17,31 @@ class GuestQuestionType extends AbstractType
         ->add('pax', null, [
             'label' => 'Nombre de personnes',
             'attr' => [
-                'placeholder' => 'Entrez le nombre de personnes'
+                'placeholder' => 'Nombre de personnes'
             ]
         ])
             ->add('night', null, [
                 'label' => 'Nombre de nuits',
                 'attr' => [
-                    'placeholder' => 'Entrez le nombre de nuits'
+                    'placeholder' => 'Nombre de places'
                 ]
             ])
             ->add('allergie', null, [
-                'label' => 'Allergies alimentaires',
+                'label' => 'Allergie alimentaire',
                 'attr' => [
-                    'placeholder' => 'Entrez les allergies alimentaires'
+                    'placeholder' => 'Allergies alimentaires'
                 ]
             ])
             ->add('regime', null, [
                 'label' => 'Régime alimentaire spécial',
                 'attr' => [
-                    'placeholder' => 'Entrez le régime alimentaire spécial'
+                    'placeholder' => 'Régime alimentaire spécial'
                 ]
             ])
             ->add('playlist', null, [
                 'label' => 'Playlist musicale préférée',
                 'attr' => [
-                    'placeholder' => 'Entrez la playlist musicale préférée'
+                    'placeholder' => 'Playlist musicale préférée'
                 ]
             ]);
     

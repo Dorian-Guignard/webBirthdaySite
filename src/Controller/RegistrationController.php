@@ -13,6 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
+use App\Services\UserDataCheckService;
 
 class RegistrationController extends AbstractController
 {
@@ -23,7 +24,8 @@ class RegistrationController extends AbstractController
         AuthenticationService $authenticationService,
         Request $request,
         EntityManagerInterface $entityManager,
-        UserPasswordHasherInterface $passwordHasher
+        UserPasswordHasherInterface $passwordHasher,
+        UserDataCheckService $hasUserData
     ): Response {
         $isAuthenticated = $authenticationService->isAuthenticated();
 
@@ -59,6 +61,9 @@ class RegistrationController extends AbstractController
             [
                 'form' => $form->createView(),
                 'isAuthenticated' => $isAuthenticated,
+                            'hasUserData' => $hasUserData
+    
+    
             ]
         );
     }
