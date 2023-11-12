@@ -25,7 +25,7 @@ class AccessController extends AbstractController
         return $this->render('access/index.html.twig', [
             'controller_name' => 'AccessController',
             'isAuthenticated' => $isAuthenticated,
-            'hasUserData' => $hasUserData
+            'hasUserData' => $hasUserData->hasUserData()
         ]);
     }
 }

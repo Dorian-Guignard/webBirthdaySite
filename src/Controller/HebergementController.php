@@ -21,9 +21,7 @@ class HebergementController extends AbstractController
         return $this->render('hebergement/index.html.twig', [
             'controller_name' => 'HebergementController',
             'isAuthenticated' => $isAuthenticated,
-            'hasUserData' => $hasUserData
-    
-    
+            'hasUserData' => $hasUserData->hasUserData()
         ]);
 
     }

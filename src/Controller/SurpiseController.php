@@ -20,7 +20,7 @@ class SurpiseController extends AbstractController
         return $this->render('surpise/index.html.twig', [
             'controller_name' => 'SurpiseController',
             'isAuthenticated' => $isAuthenticated,
-            'hasUserData' => $hasUserData
+            'hasUserData' => $hasUserData->hasUserData()
     
     
         ]);

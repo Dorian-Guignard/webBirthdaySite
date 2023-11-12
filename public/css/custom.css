@@ -31,11 +31,13 @@ html {
   border-radius: 2%;
   border-color: #7a7272;
   border-style: unset;
+  box-shadow : 5px 5px 0.5em 0.5em rgba(230, 152, 233, 0.24);
 }
 
 .img-square {
   width: 200px;
   height: 200px;
+  
 }
 
 body {

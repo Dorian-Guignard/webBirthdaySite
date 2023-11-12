@@ -22,10 +22,11 @@ class PhotosController extends AbstractController
     public function photos(UserDataCheckService $hasUserData, Request $request, EntityManagerInterface $entityManager, AuthenticationService $authenticationService, SluggerInterface $slugger): Response
     {
         $isAuthenticated = $authenticationService->isAuthenticated();
-
+        $photoRepository = $entityManager->getRepository(Photos::class);
         // Récupére le fichier téléchargé à partir de la requête
         $file = $request->files->get('file');
-
+        $photoName = $request->request->get('photo_name');
+        $latestPhoto = $photoRepository->findOneBy(['photo_name' => $photoName], ['id' => 'DESC']);
         // Vérifie si un fichier a été téléchargé
         if ($file instanceof UploadedFile) {
                     
@@ -41,10 +42,12 @@ class PhotosController extends AbstractController
 
             // Récupére l'utilisateur actuellement connecté (supposons que vous utilisez le composant Security de Symfony)
             $user = $this->getUser();
+            
 
             // Défini les propriétés de l'entité Photo
             $photo->setFileName($fileName);
             $photo->setUser($user);
+            $photo->setPhoto_name($photoName);
 
             // Enregistre l'entité Photo en base de données
             $entityManager->persist($photo);
@@ -66,14 +69,20 @@ class PhotosController extends AbstractController
         $images = array_reverse($images);
         // Si aucun fichier n'a été téléchargé ou s'il y a une erreur, afficher un message d'erreur
         $this->addFlash('error', 'Une erreur est survenue lors du téléchargement du fichier.');
-
+        
+        
+        dump($latestPhoto);
+        dump($_POST);
         // Rediriger ou afficher un message d'erreur à l'utilisateur
         return $this->render('photos/index.html.twig', [
             'images' => $images,
             'controller_name' => 'PhotosController',
-            'isAuthenticated' => $isAuthenticated,
-            'hasUserData' => $hasUserData,
+            'isAuthenticated' => $isAuthenticated, 
+            'photoName' => $latestPhoto,
+            'hasUserData' => $hasUserData->hasUserData(),
             'successMessage' => 'Le fichier a été téléchargé avec succès.',
+            
         ]);
+        
     }
 }

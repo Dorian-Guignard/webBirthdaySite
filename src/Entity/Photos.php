@@ -28,6 +28,11 @@ class Photos
      */
     private $fileName;
 
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $photo_name;
+
 
     public function getId(): ?int
     {
@@ -62,6 +67,26 @@ class Photos
     public function setFileName($fileName)
     {
         $this->fileName = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of photo_name
+     */ 
+    public function getPhoto_name()
+    {
+        return $this->photo_name;
+    }
+
+    /**
+     * Set the value of photo_name
+     *
+     * @return  self
+     */ 
+    public function setPhoto_name($photo_name)
+    {
+        $this->photo_name = $photo_name;
 
         return $this;
     }

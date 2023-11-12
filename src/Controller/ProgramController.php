@@ -21,7 +21,7 @@ class ProgramController extends AbstractController
         return $this->render('program/index.html.twig', [
             'controller_name' => 'ProgramController',
             'isAuthenticated' => $isAuthenticated,
-            'hasUserData' => $hasUserData
+            'hasUserData' => $hasUserData->hasUserData()
         ]);
     }
 }

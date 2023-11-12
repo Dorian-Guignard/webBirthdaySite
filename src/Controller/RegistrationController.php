@@ -61,7 +61,7 @@ class RegistrationController extends AbstractController
             [
                 'form' => $form->createView(),
                 'isAuthenticated' => $isAuthenticated,
-                            'hasUserData' => $hasUserData
+                'hasUserData' => $hasUserData->hasUserData()
     
     
             ]

@@ -77,7 +77,7 @@ class GuestQuestionController extends AbstractController
             'controller_name' => 'GuestQuestionController',
             'username' => $userConnected,
             'isAuthenticated' => $isAuthenticated, 
-            'hasUserData' => $userDataCheckService,
+            'hasUserData' => $userDataCheckService->hasUserData(),
             'form' => $form->createView()
 
         ]);
