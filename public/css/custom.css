@@ -27,11 +27,26 @@ html {
   background-color: transparent !important;
 }
 
+
+.img-div{
+ display: flex;
+}
+
 .img-border {
   border-radius: 2%;
   border-color: #7a7272;
   border-style: unset;
   box-shadow : 5px 5px 0.5em 0.5em rgba(230, 152, 233, 0.24);
+ 
+}
+
+.text-photo-name{
+  background-color: #000000;
+  color: #e70c0c;
+  position: absolute;
+  bottom: 200px;
+  width: 227px;
+  height: 25px;
 }
 
 .img-square {
@@ -397,3 +412,4 @@ border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
   }
   /* Ajoutez d'autres styles pour le menu déroulant ici */
 }
+

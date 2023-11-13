@@ -25,11 +25,11 @@ class PhotosController extends AbstractController
         $photoRepository = $entityManager->getRepository(Photos::class);
         // Récupére le fichier téléchargé à partir de la requête
         $file = $request->files->get('file');
-        $photoName = $request->request->get('photo_name');
-        $latestPhoto = $photoRepository->findOneBy(['photo_name' => $photoName], ['id' => 'DESC']);
+        $photoName = $request->request->get('photoName');
+        $latestPhoto = $photoRepository->findOneBy(['photoName' => $photoName], ['id' => 'DESC']);
         // Vérifie si un fichier a été téléchargé
         if ($file instanceof UploadedFile) {
-                    
+
 
             // Déplace le fichier vers le répertoire de destination
             $uploadsDirectory = $this->getParameter('uploads_directory');
@@ -42,12 +42,12 @@ class PhotosController extends AbstractController
 
             // Récupére l'utilisateur actuellement connecté (supposons que vous utilisez le composant Security de Symfony)
             $user = $this->getUser();
-            
+
 
             // Défini les propriétés de l'entité Photo
             $photo->setFileName($fileName);
             $photo->setUser($user);
-            $photo->setPhoto_name($photoName);
+            $photo->setPhotoName($photoName);
 
             // Enregistre l'entité Photo en base de données
             $entityManager->persist($photo);
@@ -69,20 +69,43 @@ class PhotosController extends AbstractController
         $images = array_reverse($images);
         // Si aucun fichier n'a été téléchargé ou s'il y a une erreur, afficher un message d'erreur
         $this->addFlash('error', 'Une erreur est survenue lors du téléchargement du fichier.');
-        
-        
+
+
         dump($latestPhoto);
         dump($_POST);
         // Rediriger ou afficher un message d'erreur à l'utilisateur
         return $this->render('photos/index.html.twig', [
             'images' => $images,
             'controller_name' => 'PhotosController',
-            'isAuthenticated' => $isAuthenticated, 
+            'isAuthenticated' => $isAuthenticated,
             'photoName' => $latestPhoto,
             'hasUserData' => $hasUserData->hasUserData(),
             'successMessage' => 'Le fichier a été téléchargé avec succès.',
-            
+
         ]);
-        
+    }
+
+
+    /**
+     * @Route("/photos/delete/{id}", name="app_delete_photo", methods={"DELETE"})
+     */
+    public function deletePhoto($id, Photos $photo, EntityManagerInterface $entityManager, AuthenticationService $authenticationService): Response
+    {
+        // Récupérez la photo à supprimer en fonction de son ID
+        $photo = $entityManager->getRepository(Photos::class)->find($id);
+
+        if (!$photo) {
+            throw $this->createNotFoundException('La photo n\'existe pas.');
+        }
+
+        // Supprimez la photo
+        $entityManager->remove($photo);
+        $entityManager->flush();
+
+        // Ajoutez un message flash pour indiquer que la suppression a réussi
+        $this->addFlash('success', 'La photo a été supprimée avec succès.');
+
+        // Redirigez l'utilisateur vers la liste des photos ou toute autre page appropriée
+        return $this->redirectToRoute('app_photos');
     }
 }

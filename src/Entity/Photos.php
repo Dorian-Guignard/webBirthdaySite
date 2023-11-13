@@ -30,8 +30,9 @@ class Photos
 
     /**
      * @ORM\Column(type="string")
+     * @ORM\JoinColumn(nullable=true)
      */
-    private $photo_name;
+    private $photoName;
 
 
     public function getId(): ?int
@@ -71,22 +72,24 @@ class Photos
         return $this;
     }
 
+
+
     /**
-     * Get the value of photo_name
+     * Get the value of photoName
      */ 
-    public function getPhoto_name()
+    public function getPhotoName()
     {
-        return $this->photo_name;
+        return $this->photoName;
     }
 
     /**
-     * Set the value of photo_name
+     * Set the value of photoName
      *
      * @return  self
      */ 
-    public function setPhoto_name($photo_name)
+    public function setPhotoName($photoName)
     {
-        $this->photo_name = $photo_name;
+        $this->photoName = $photoName;
 
         return $this;
     }
