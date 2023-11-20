@@ -413,3 +413,45 @@ border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
   /* Ajoutez d'autres styles pour le menu déroulant ici */
 }
 
+/* Modal page d'acceuil */
+.modal {
+    display:flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width:100% ;
+    max-height: 100%;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+.text-modal{
+  position: absolute;
+  top: 10%;
+}
+
+.img-modal{
+    position: absolute;
+    top:20%;
+    right: 35%;
+    max-width:80% ;
+    max-height: 80%;
+}
+
+.modal-body {
+    padding: 50px;
+}
+
+.btn.btn-primary.btn-modal{
+  position: absolute;
+  top: 90%;
+}
+
+.countdown-item {
+  font-size: 16px;
+  color: #000;
+  padding: 5px;
+  margin: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}

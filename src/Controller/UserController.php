@@ -7,6 +7,7 @@ use App\Services\AuthenticationService;
 use App\Services\FormValidationService;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
@@ -16,10 +17,12 @@ class UserController extends AbstractController
      * @Route("/user", name="app_user")
      * 
      */
-    public function index(FormValidationService $formValidationService, AuthenticationService $authenticationService, UserDataCheckService $userDataCheckService): Response
+    public function index(SessionInterface $session, FormValidationService $formValidationService, AuthenticationService $authenticationService, UserDataCheckService $userDataCheckService): Response
     {
         $hasUserData = $userDataCheckService;
         $isAuthenticated = $authenticationService->isAuthenticated();
+
+
         return $this->render('user/index.html.twig', [
             'controller_name' => 'UserController',
             'isAuthenticated' => $isAuthenticated,
