@@ -8,6 +8,7 @@ var iconContainer = document.getElementById("confetti-icon");
 
 document.addEventListener('DOMContentLoaded', function (event) {
   event.preventDefault();
+  
   // Initialiser le compte à rebours
   countdown();
 });
@@ -31,20 +32,14 @@ const hours = new Date(difference).getUTCHours();
 const minutes = new Date(difference).getUTCMinutes();
 const seconds = new Date(difference).getUTCSeconds();
 
-  console.log('Years:', years);
-  console.log('Months:', months);
-  console.log('Days:', days);
-  console.log('Hours:', hours);
-  console.log('Minutes:', minutes);
-  console.log('Seconds:', seconds);
 
   // Afficher le compte à rebours
-  document.getElementById('years').innerHTML = `Années : ${years}`;
-  document.getElementById('months').innerHTML = `Mois : ${months}`;
-  document.getElementById('days').innerHTML = `Jours : ${days}`;
-  document.getElementById('hours').innerHTML = `H : ${hours}`;
-  document.getElementById('minutes').innerHTML = `M : ${minutes}`;
-  document.getElementById('seconds').innerHTML = `S : ${seconds}`;
+  document.getElementById('years').innerHTML = ` ${years} ans,`;
+  document.getElementById('months').innerHTML = `${months} mois,`;
+  document.getElementById('days').innerHTML = ` ${days} jours,`;
+  document.getElementById('hours').innerHTML = `${hours} heures,`;
+  document.getElementById('minutes').innerHTML = `${minutes} minutes`;
+  document.getElementById('seconds').innerHTML = `et ${seconds} secondes :`;
 
   // Répéter le compte à rebours toutes les secondes
   setTimeout(countdown, 1000);

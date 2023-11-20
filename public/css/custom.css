@@ -421,37 +421,46 @@ border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
     left: 0;
     max-width:100% ;
     max-height: 100%;
-    background-color: #ffffff;
+    background-color: #eeeaeac0;
     z-index: 1000;
+}
+
+.modal-card{
+  position: absolute;
+  width: 550px;
+  height: 650px;
+  background-color: #f1f0f0;
+  border-radius: 30px;
+  border: #494747 solid;
 }
 
 .text-modal{
   position: absolute;
   top: 10%;
+  left: 5%;
 }
 
-.img-modal{
+.modal-body{
     position: absolute;
-    top:20%;
-    right: 35%;
-    max-width:80% ;
-    max-height: 80%;
-}
-
-.modal-body {
-    padding: 50px;
+    top:25%;
+    right: 30%;
+    max-width:40% ;
+    max-height: 40%;
+    border-radius: 10px;
+    border: #979090 solid;
+    box-shadow : 5px 5px 0.5em 0.5em rgba(66, 65, 66, 0.24);
 }
 
 .btn.btn-primary.btn-modal{
   position: absolute;
-  top: 90%;
+  top: 80%;
+  left: 40%;
 }
 
 .countdown-item {
   font-size: 16px;
   color: #000;
-  padding: 5px;
-  margin: 0 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 1px;
+  margin: 0 1px;
+
 }
