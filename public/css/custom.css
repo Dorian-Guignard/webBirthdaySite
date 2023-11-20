@@ -438,6 +438,9 @@ border: 2px solid #000000; /* Couleur de la bordure (noire dans cet exemple) */
   position: absolute;
   top: 10%;
   left: 5%;
+  border: #cac4c4 solid;
+  
+  border-radius: 10px;
 }
 
 .modal-body{
