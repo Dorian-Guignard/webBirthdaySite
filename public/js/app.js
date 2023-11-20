@@ -15,19 +15,21 @@ document.addEventListener('DOMContentLoaded', function (event) {
 function countdown() {
  
   // Définir les dates de début et de fin
-  const dateDebut = new Date('1974-06-29T08:00:00').getTime();
-  const dateFin = new Date('2024-06-29T08:00:00').getTime();
+const dateDebut = new Date('1974-06-29T08:00:00').getTime();
 
-  // Calculer la différence entre les deux dates en millisecondes
-  const difference = dateFin - dateDebut;
+// Obtenir la date actuelle
+const now = new Date().getTime();
 
-  // Convertir la différence en années, mois, jours, heures, minutes et secondes
-  const years = new Date(difference).getUTCFullYear() - 1970;
-  const months = new Date(difference).getUTCMonth();
-  const days = new Date(difference).getUTCDate() - 1;
-  const hours = new Date(difference).getUTCHours();
-  const minutes = new Date(difference).getUTCMinutes();
-  const seconds = new Date(difference).getUTCSeconds();
+// Calculer la différence entre la date actuelle et la date de début
+const difference = now - dateDebut;
+
+// Convertir la différence en années, mois, jours, heures, minutes et secondes
+const years = new Date(difference).getUTCFullYear() - 1970;
+const months = new Date(difference).getUTCMonth();
+const days = new Date(difference).getUTCDate() - 1;
+const hours = new Date(difference).getUTCHours();
+const minutes = new Date(difference).getUTCMinutes();
+const seconds = new Date(difference).getUTCSeconds();
 
   console.log('Years:', years);
   console.log('Months:', months);
