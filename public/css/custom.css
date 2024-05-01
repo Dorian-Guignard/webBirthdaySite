@@ -7,8 +7,8 @@ html {
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to left,
-    #2c23af,
-    #a929ff
+    #3629e9,
+    #c47df3
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
@@ -297,16 +297,16 @@ h1 {
   background: -webkit-linear-gradient(
     to left,
     #c7b8c5 25%,
-    #81279c 20%,
+    #ad0bdf 20%,
     #caa7d4 100%
   );
   background: -moz-linear-gradient(
     to left,
     #c7b8c5 25%,
-    #81279c 20%,
+    #0a5ac2 20%,
     #caa7d4 30%
   );
-  background: linear-gradient(to left, #c7b8c5 30%, #cf86e5 55%, #af63c4 65%);
+  background: linear-gradient(to left, #ff05de 30%, #5dd6e6 55%, #efebf0 65%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -2,12 +2,82 @@
     display: flex;
 }
 
-.bandeau-photo{
+.bandeau-photo1{
     align-items: flex-start;
     flex-direction: column;
-    width: 250px;
-    height: 150px;
-    background-color: aliceblue;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/20240330_143616.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}
+
+.bandeau-photo2{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/20240330_143653.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}
+
+.bandeau-photo3{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/20240330_143741.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}
+.bandeau-photo4{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/20240330_143823.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}
+.bandeau-photo5{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/20240330_143934.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}
+.bandeau-photo6{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/20240330_144015.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
+    border-radius: 10px;
+    box-shadow:4px 5px 5px darkgrey;
+}
+.bandeau-photo7{
+    align-items: flex-start;
+    flex-direction: column;
+    width: 210px;
+    height: 260px;
+    background-image:url("../img/imgSylvie/IMG-20240330-WA0019.jpg");
+    background-size: cover; /* Ajuste la taille de l'image pour couvrir complètement la zone définie */
+    background-position: center; /* Centre l'image horizontalement et verticalement */
     border-radius: 10px;
     box-shadow:4px 5px 5px darkgrey;
 }
